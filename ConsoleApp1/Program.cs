@@ -13,8 +13,8 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            var output = ClosestNumber(5, new int[] {5, 10, 12});     
-            var output1 = ClosestNumber(2, new int[] { 0, 2, 3 });    
+            var output = ClosestNumber(6, new int[] {5, 10, 12});     
+            var output1 = ClosestNumber(1, new int[] { 0, 2, 3 });    
             var output2 = ClosestNumber(-12, new int[] { -1, 0, 7, -4, -20, 3 });
             var output3 = ClosestNumber(7, new int[] { 1, -4, 7, 8 });
             Console.WriteLine(output);
@@ -27,8 +27,9 @@ namespace ConsoleApp1
         public static int ClosestNumber(int number, int[] collection)
         {
             //Define int to contain the closest located number
-            int closestNumber = 0;
-            int closestGap = 0; 
+            //-> By setting closest values to max value I enable the evaluation below to properly identify the minimum gap
+            int closestNumber = int.MaxValue;
+            int closestGap = int.MaxValue; 
             // For loop to iterate over collection
             for (int i = 0; i < collection.Length; i++)
             {
